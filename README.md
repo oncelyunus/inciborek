@@ -24,5 +24,5 @@ password: root
 * good to go - its ready to start javafx windows for login
 
 ## Authors
-* **Yunus Oncel** - *Initial work* - [Yunus_Oncel](https://github.com/yunusinwien)
+* **Yunus Oncel** - *Initial work* - [Yunus Öncel](https://github.com/yunusinwien)
 * **Burak Karaoglan** - *Initial work* - [Burak Karaoglan](https://github.com/karaoglan)
