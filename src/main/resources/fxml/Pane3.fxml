@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.111"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="tr.com.inciborek.controller.Pane">
+    <BorderPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@../styles/Styles.css">
+        <top>
+
+        </top>
+        <left>
+        </left>
+      <center>
+         <JFXButton text="Pane3 Welcome" BorderPane.alignment="CENTER" />
+      </center>
+    </BorderPane>
+
+</AnchorPane>

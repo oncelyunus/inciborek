@@ -10,6 +10,8 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
 import javafx.util.Callback;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -118,7 +120,12 @@ public class UserController implements Initializable{
     private TableColumn<User, Boolean> colEdit;
 
     @FXML
+    private AnchorPane rightAnchor;
+
+    @FXML
     private MenuItem deleteUsers;
+
+    private static ButtonNumber buttonNumber = ButtonNumber.NONE;
 
     @Lazy
     @Autowired
@@ -147,6 +154,63 @@ public class UserController implements Initializable{
     void reset(ActionEvent event) {
         clearFields();
     }
+
+    @FXML
+    private void changeColor(ActionEvent event) throws IOException {
+        Button btn = (Button) event.getSource();
+        System.out.println(btn.getText());
+
+
+
+        AnchorPane pane2 = FXMLLoader.load(getClass().getResource("/fxml/Pane2.fxml"));
+        AnchorPane pane3 = FXMLLoader.load(getClass().getResource("/fxml/Pane3.fxml"));
+
+        switch (btn.getText()) {
+            case "Color 1": {
+                if (buttonNumber.equals(ButtonNumber.BUTTON1))
+                    return;
+
+                buttonNumber = ButtonNumber.BUTTON1;
+                //rightAnchor.getChildren().clear();
+                //rightAnchor.getChildren().add(pane1);
+                stageManager.switchScene(FxmlView.USER);
+
+                System.out.println("button1 clicked");
+                break;
+            }
+            case "Color 2": {
+                if (buttonNumber.equals(ButtonNumber.BUTTON2))
+                    return;
+
+                buttonNumber = ButtonNumber.BUTTON2;
+                rightAnchor.getChildren().clear();
+                rightAnchor.getChildren().add(pane2);
+                System.out.println("button2 clicked");
+
+                break;
+            }
+            case "Color 3": {
+                if (buttonNumber.equals(ButtonNumber.BUTTON3))
+                    return;
+
+                buttonNumber = ButtonNumber.BUTTON3;
+                rightAnchor.getChildren().clear();
+                rightAnchor.getChildren().add(pane3);
+                System.out.println("button3 clicked");
+
+                break;
+            }
+
+        }
+    }
+
+    private enum ButtonNumber {
+        BUTTON1,
+        BUTTON2,
+        BUTTON3,
+        NONE
+    }
+
 
     @FXML
     private void saveUser(ActionEvent event){

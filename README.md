@@ -17,7 +17,9 @@ password: root
 ```
 "mvn clean install"
 ```
-* "cd target" and deploy 
+* at src/main/java run Main.java
+
+* or you can also deploy or run jar file "cd target" and deploy 
 ```
 "java -jar inciborek-1.0.0.jar"
 ```
